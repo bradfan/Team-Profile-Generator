@@ -3,14 +3,18 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 // const generateHtml = require("./generateHtml.js");
 
-inquirer.prompt([
-
- ])
-// .then(function(answers){
-//     const htmlString = ``;
-//     // paste HTML info here between the tick marks above.
-//     console.log("data:", answers);
-//     fs.writeFile("index.html", htmlString, ()=>{
-//         console.log("success")
-//     })
-// })
+class Employee {
+    constructor(name, id, email) {
+      this.name = name;
+      this.id = id;
+      this.email = email;
+    }
+    // add functions to the class function?
+    // getName(), getId(), getEmail() and getRole()-returns "Employee" per assignment
+  
+    // printInfo() {
+    //   console.log(`Name: ${this.name}`);
+    //   console.log(`id: ${this.id}`);
+    //   console.log(`email: ${this.email}`);
+    // }
+  }
