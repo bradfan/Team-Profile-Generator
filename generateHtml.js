@@ -1,4 +1,7 @@
-// const bootstrap = require(bootstrap)
+const bulma = require("bulma");
+console.log("Hello from generateHtml");
+const generateHtml = require("./index.js");
+
 
 
 // .then(function(answers){
@@ -20,4 +23,3 @@
 
 
 
-//  module.exports = generateHtml.js;
