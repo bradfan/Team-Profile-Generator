@@ -1,11 +1,17 @@
-const Employee = require('./index.js');
+console.log("Engineer.js says hello")
+const Employee = require('./Employee.js');
 
 class Engineer extends Employee{
     constructor(githubUserName)
-    //   getGithub() & getRole()-overriden to return "Engineer" per assignment
+    
+  };
+  getgitHubUserName = () => {
+    return this.gitHubUserName;
+  };
+  getPosition = () => {
+    return "Engineer";
   };
 
 
 
-
-  //  module.exports = generateHtml.js;
+    module.exports = index.js;

@@ -1,4 +1,5 @@
 console.log("index.js says hello");
+// const bulma = require("bulma");
 const inquirer = require("inquirer");
 const fs = require("fs");
 
@@ -31,40 +32,27 @@ inquirer.prompt([
 .then(function(data) {
     console.log("data:", data)
     
-      // console.log("sent to generateHtml.js")
+      
   
 });
 
-class Employee {
-    constructor(name, id, email) {
-      this.name = name;
-      this.id = id;
-      this.email = email;
-      this.getName = () => {
-        
-      };
-      this.getId = () => {
 
-      };
-      this.getEmail = () => {
+// .then(function(answers){
+//     const htmlString = ``;
+//     // paste HTML info here between the tick marks above.
+//     console.log("data:", answers);
+//     fs.writeFile("index.html", htmlString, ()=>{
+//         console.log("success")
+//     })
+// })
 
-      };
-      this.getPosition = () => {
-        // returns Employee per assignment 
-      }
-    }
-    
-  
-    // printInfo() {
-    //   console.log(`Name: ${this.name}`);
-    //   console.log(`id: ${this.id}`);
-    //   console.log(`email: ${this.email}`);
-    // }
-  }
 
-  
 
- 
-  //  module.exports = Manager.js;
-  //  module.exports = Engineer.js;
-  //  module.exports = Intern.js;
+
+
+
+
+
+
+
+

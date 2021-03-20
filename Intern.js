@@ -1,10 +1,19 @@
-const Employee = require('./index.js');
+console.log("Intern.js says hello")
+const Employee = require('./Employee.js');
 
 class Intern extends Employee{
     constructor(school)
-    //   getSchool(), getRole()-overridden to return "Intern" per assignment
+    
   };
+ 
+getSchool = () => {
+  return this.school;
+};
+getPosition = () => {
+  return "Intern";
+};
 
 
 
-  //  module.exports = generateHtml.js;
+
+    module.exports = index.js;
