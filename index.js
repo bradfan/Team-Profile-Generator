@@ -18,3 +18,18 @@ class Employee {
     //   console.log(`email: ${this.email}`);
     // }
   }
+
+  class Manager extends Employee{
+      constructor(officeNumber)
+    //   getRole()-overridden to return "Manager" per assignment
+  };
+
+  class Engineer extends Employee{
+    constructor(githubUserName)
+    //   getGithub() & getRole()-overrideen to return "Engineer" per assignment
+  };
+
+  class Intern extends Employee{
+    constructor(school)
+    //   getSchool(), getRole()-overridden to return "Intern" per assignment
+  };
