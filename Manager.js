@@ -1,9 +1,9 @@
-console.log("Manager.js says hello");
-const Employee = require('./employee.js');
+console.log("manager.js says hello");
+const employee = require('./employee.js');
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-class Manager extends Employee{
+class manager extends employee{
     constructor(officeNumber)
     
 };
@@ -15,4 +15,4 @@ getofficeNumber = () => {
   };
 
 
-  module.exports = index.js;
+  // module.exports = manager.js;

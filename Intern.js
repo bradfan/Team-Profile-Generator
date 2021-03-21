@@ -1,7 +1,8 @@
-console.log("Intern.js says hello")
-const Employee = require('./employee.js');
+console.log("intern.js says hello")
+const employee = require('./employee.js');
+const fs = require("fs");
 
-class Intern extends Employee{
+class intern extends employee{
     constructor(school)
     
   };
@@ -16,4 +17,4 @@ getPosition = () => {
 
 
 
-    module.exports = index.js;
+    // module.exports = intern.js;
