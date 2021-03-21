@@ -1,5 +1,5 @@
 console.log("Intern.js says hello")
-const Employee = require('./Employee.js');
+const Employee = require('./employee.js');
 
 class Intern extends Employee{
     constructor(school)

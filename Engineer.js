@@ -1,5 +1,5 @@
 console.log("Engineer.js says hello")
-const Employee = require('./Employee.js');
+const Employee = require('./employee.js');
 
 class Engineer extends Employee{
     constructor(githubUserName)

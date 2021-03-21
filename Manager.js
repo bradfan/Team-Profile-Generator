@@ -1,5 +1,5 @@
 console.log("Manager.js says hello");
-const Employee = require('./Employee.js');
+const Employee = require('./employee.js');
 const inquirer = require("inquirer");
 const fs = require("fs");
 
