@@ -15,16 +15,19 @@ inquirer.prompt([
 })
 
 class Engineer extends Employee{
-    constructor(githubUserName)
+    constructor(name, id, email, githubUserName){
+      super(name,id,email);
+      this.githubUserName = githubUserName
+    }
     
-  };
-  getgitHubUserName = () => {
+ 
+  getgitHubUserName(){
     return this.gitHubUserName;
   };
-  getPosition = () => {
+  getPosition(){
     return "Engineer";
   };
-
+ };
 
 
      module.exports = Engineer.js;

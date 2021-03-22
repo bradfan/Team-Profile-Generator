@@ -3,60 +3,23 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 
 
-
-
-inquirer.prompt([
-    {
-        type: "input",
-        name: "name",
-        message: "What is the Employee's name?",
-    },
-    {
-        type: "input",
-        name: "id",
-        message: "What is the Employee's id?",
-    },
-    {
-        type: "input",
-        name: "email",
-        message: "What is the Employee's email address?",
-    },
-    {
-        type: "list",
-        name: "position",
-        message: "Which job title does the Employee have",
-        choices: ["Manager", "Engineer", "Intern"]
-    },
-  
-  ]).then(function(data) {
-    console.log("data:", data) 
-    //    pass by reference? or value? to class function
-    
-  });
-        /**.then(function(data) {
-    fs.writeFile("genREADME.md", generateMarkdown(data),(err)=>{
-        if (err) throw err;
-        console.log("sent to generateMarkdown.js")
-    });
-}); */
-
-  class Employee {
-    constructor(name, id, email, position) {
+class Employee {
+    constructor(name, id, email) {
      this.name = name;
      this.id = id;
      this.email = email;
-     this.position = position;
+     
     } 
-     getName = () => {
+     getName(){
        return this.name;
      };
-     getId = () => {
+     getId(){
        return this.id;
      };
-     getEmail = () => {
-       return this.email
+     getEmail(){
+       return this.email;
      };
-     getPosition = () => {
+     getPosition(){
         return "Employee"
      }
      
@@ -65,22 +28,6 @@ inquirer.prompt([
 module.exports = Employee;
     
 
-
-  
- //   const input = data
-    // if (`${data.Manager}` === true) {
-    //   fs.writeFile("manager.js", input, ()=>{
-    //     console.log("sent to Manager");
-    //   })
-    // }if (`${data.Engineer}` === true) {
-    //   fs.writeFile("engineer.js", input, ()=>{
-    //     console.log("sent to Engineer");
-    //   } )
-    // }if (`${data.Intern}` === true){
-    //   fs.writeFile("intern.js", input, ()=>{
-    //     console.log("sent to Intern");
-    //   })
-    // }
   
 
  

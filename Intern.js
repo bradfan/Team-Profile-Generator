@@ -3,17 +3,20 @@ const employee = require('./employee.js');
 const fs = require("fs");
 
 class intern extends employee{
-    constructor(school)
+    constructor(name,id,email,school){
+      super(name,id,email);
+      this.school = school
+    }
     
-  };
  
-getSchool = () => {
+ 
+getSchool(){
   return this.school;
 };
-getPosition = () => {
+getPosition(){
   return "Intern";
 };
-
+};
 
 
 
