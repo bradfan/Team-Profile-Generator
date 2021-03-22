@@ -27,6 +27,7 @@ class Employee {
  
 module.exports = Employee;
     
+//  don't worry about "sets" - constructor is kinda taking their place
 
   
 
