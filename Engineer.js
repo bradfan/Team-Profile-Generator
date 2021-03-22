@@ -14,7 +14,7 @@ inquirer.prompt([
   console.log("Github name:", answer)
 })
 
-class Engineer extends employee{
+class Engineer extends Employee{
     constructor(githubUserName)
     
   };

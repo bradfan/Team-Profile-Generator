@@ -30,9 +30,15 @@ inquirer.prompt([
   
   ]).then(function(data) {
     console.log("data:", data) 
-    //    pass by reference to class function
+    //    pass by reference? or value? to class function
     
   });
+        /**.then(function(data) {
+    fs.writeFile("genREADME.md", generateMarkdown(data),(err)=>{
+        if (err) throw err;
+        console.log("sent to generateMarkdown.js")
+    });
+}); */
 
   class Employee {
     constructor(name, id, email, position) {
@@ -53,16 +59,12 @@ inquirer.prompt([
      getPosition = () => {
         return "Employee"
      }
-      
+     
 }
-  
-
-  
-
-
- module.exports = Employee;
+ 
+module.exports = Employee;
     
-      
+
 
   
  //   const input = data
