@@ -2,7 +2,7 @@ console.log("index.js says hello");
 const inquirer = require("inquirer");
 const fs = require("fs");
 const Intern = require("./intern.js");
-const Manager = require("./manager.js");
+const Manager = require("./lib/manager.js");
 const Engineer = require("./engineer.js");
 const teamArray = [];
 
@@ -99,7 +99,7 @@ function engineerInfo() {
           answer.name,
           answer.id,
           answer.email,
-          answer.officeNumber
+          answer.gitHubUserName
         );
         teamArray.push(engineer);
         determineEmployee();
@@ -134,7 +134,7 @@ function internInfo() {
           answer.name,
           answer.id,
           answer.email,
-          answer.officeNumber
+          answer.school
         );
         teamArray.push(intern);
         determineEmployee();
@@ -142,8 +142,24 @@ function internInfo() {
 }
 
 function createHTML() {
+
+  let teamHTML = ""
+
+  for(let subClass of teamArray){
+    console.log("position: ", subClass.getPosition())
+    console.log(subClass)
+    //if subclass postion === manager
+    // create manager card, push into teamHTML
+
+    //if subclass postion === intern
+    //create intern card
+
+    //if subclass postion == engineer
+    //creat engineer card
+  }
+
   // create an HTML file from the teamArray
-  let teamHTML = "";
+ 
   
    for (var i = 0; i < teamArray.length; i++) {
     teamHTML += `
@@ -152,9 +168,11 @@ function createHTML() {
                 
                 <div class="media">
                 <div class="media-content">
-                    <p id="name" class="title is-2">Name: ${teamArray[i].name}</p>
+                    <p id="role" class="title is-4">Role:  ${teamArray}</p>
+                    <p id="name" class="title is-4">Name: ${teamArray[i].name}</p>
                     <p id="id" class="title is-4">ID: ${teamArray[i].id}</p>
-                    <p id="email" class="title is-4">email: ${teamArray[i].email}</p>
+                    <p id="email" class="title is-4">email:<a href="mailto:${teamArray[i].email}"</p>
+                    <p id="modifier" class="title is-4">Modifier: ${teamArray[i].email}</p>
                 </div>
             </div>
             
@@ -195,7 +213,7 @@ function createHTML() {
                 display:flex;
                 flex-direction: row;
                 float: left;
-                width: 25%;
+                width: 20%;
                 padding: 0 10px;
             }
             .is-2{
@@ -227,7 +245,7 @@ function createHTML() {
     `;
 
     // write to the team html file
-    //  fs.writeFile("index.html", teamArray(answers),(err)=>{
+    //  fs.writeFile("index.html", teamHTML,(err)=>{
     //     if (err) throw err;
     //     console.log("sent to html")
     //   });
