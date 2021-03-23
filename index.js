@@ -12,7 +12,7 @@ function determineEmployee() {
       {
         type: "list",
         name: "position",
-        message: "Which job title does the Employee have",
+        message: "What is the Employee's position?",
         choices: ["Manager", "Engineer", "Intern", "I am finished for now"],
       },
     ])
@@ -92,7 +92,18 @@ function engineerInfo() {
            name: "gitHubUserName",
            message: "What is the Engineer's Github user name?"
         }
+       
     ])
+    .then((answer) => {
+        const engineer = new Engineer(
+          answer.name,
+          answer.id,
+          answer.email,
+          answer.officeNumber
+        );
+        teamArray.push(engineer);
+        determineEmployee();
+      });
 }
 
 function internInfo() {
@@ -118,11 +129,24 @@ function internInfo() {
             message: "What school does the Intern attend?"
           }
     ])
+    .then((answer) => {
+        const intern = new Intern(
+          answer.name,
+          answer.id,
+          answer.email,
+          answer.officeNumber
+        );
+        teamArray.push(intern);
+        determineEmployee();
+      });
 }
 
 function createHTML() {
   // create an HTML file from the teamArray
   let teamHTML = "";
+  
+   
+ 
 
   for (var i = 0; i < teamArray.length; i++) {
     teamHTML += `
@@ -206,4 +230,8 @@ function createHTML() {
     `;
 
     // write to the team html file
+     fs.writeFile("index.html", teamArray(answers),(err)=>{
+        if (err) throw err;
+        console.log("sent to html")
+      });
 }
