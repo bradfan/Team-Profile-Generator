@@ -1,7 +1,4 @@
 console.log("employee.js says hello");
-const inquirer = require("inquirer");
-const fs = require("fs");
-
 
 class Employee {
     constructor(name, id, email) {
@@ -27,7 +24,7 @@ class Employee {
  
 module.exports = Employee;
     
-//  don't worry about "sets" - constructor is kinda taking their place
+
 
   
 

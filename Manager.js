@@ -1,14 +1,13 @@
 console.log("manager.js says hello");
-const employee = require('./employee.js');
+const Employee = require('./employee.js');
 
 
-class manager extends employee{
+class Manager extends Employee{
     constructor(name, id, email,officeNumber){
     super(name,id,email);
-    this.officeNumber = office.number 
+    this.officeNumber = officeNumber;
   }
-
-getofficeNumber(){
+  getofficeNumber(){
     return this.officeNumber;
   };
   getPosition(){
@@ -16,4 +15,4 @@ getofficeNumber(){
   };
 };
 
-  // module.exports = Manager;
+   module.exports = Manager;

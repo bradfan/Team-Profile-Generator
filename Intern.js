@@ -1,16 +1,14 @@
 console.log("intern.js says hello")
-const employee = require('./employee.js');
-const fs = require("fs");
+const Employee = require('./employee.js');
 
-class intern extends employee{
+
+class Intern extends Employee{
     constructor(name,id,email,school){
       super(name,id,email);
       this.school = school
     }
     
- 
- 
-getSchool(){
+ getSchool(){
   return this.school;
 };
 getPosition(){
@@ -20,4 +18,4 @@ getPosition(){
 
 
 
-    // module.exports = intern.js;
+   module.exports = Intern;
