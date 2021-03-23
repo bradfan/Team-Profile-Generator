@@ -22,8 +22,8 @@ describe("Manager", () => {
     });
     test("Can set Github User Name attribute with constructor", () => {
         const gitHubUserName = "bilbo";
-        const e = new Engineer("Bill", 66, "brt.jst@gmail.com");
-        expect(e.gitHubUserName).toBe("bilbo");
+        const e = new Engineer("Bill", 66, "brt.jst@gmail.com",gitHubUserName);
+        expect(e.getGitHubUserName()).toBe("bilbo");
       });
   });
   describe("getters", () => {
@@ -44,8 +44,8 @@ describe("Manager", () => {
     });
     test("Can get Github User Name via get() method", () => {
         const gitHubUserName = "bilbo";
-        const e = new Manager("Bill", 66, "brt.jst@gmail.com");
-        expect(e.gitHubUserName()).toBe(gitHubUserName);
+        const e = new Engineer("Bill", 66, "brt.jst@gmail.com", "bilbo");
+        expect(e.getGitHubUserName()).toBe(gitHubUserName);
       });
     test("Can get position via getPosition() method", () => {
       const e = new Engineer("Bill", 66, "brt.jst@gmail.com");

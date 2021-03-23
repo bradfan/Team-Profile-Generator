@@ -21,8 +21,8 @@ describe("Intern", () => {
       expect(e.email).toBe(email);
     });
     test("Can set school attribute with constructor", () => {
-        const gitHubUserName = "U of A";
-        const e = new Intern("Bill", 66, "brt.jst@gmail.com");
+        const school = "U of A";
+        const e = new Intern("Bill", 66, "brt.jst@gmail.com",school);
         expect(e.school).toBe("U of A");
       });
   });
@@ -44,8 +44,8 @@ describe("Intern", () => {
     });
     test("Can get school via get() method", () => {
         const school = "U of A";
-        const e = new Intern("Bill", 66, "brt.jst@gmail.com");
-        expect(e.school()).toBe(school);
+        const e = new Intern("Bill", 66, "brt.jst@gmail.com",school);
+        expect(e.getSchool()).toBe(school);
       });
     test("Can get position via getPosition() method", () => {
       const e = new Intern("Bill", 66, "brt.jst@gmail.com");

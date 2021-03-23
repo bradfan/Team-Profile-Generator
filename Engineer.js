@@ -2,11 +2,11 @@ console.log("engineer.js says hello")
 const Employee = require('./employee.js');
 
 class Engineer extends Employee{
-    constructor(name, id, email, githubUserName){
+    constructor(name, id, email, gitHubUserName){
       super(name,id,email);
-      this.githubUserName = githubUserName
+      this.gitHubUserName = gitHubUserName
     }
-    getgitHubUserName(){
+    getGitHubUserName(){
     return this.gitHubUserName;
     };
      getPosition(){

@@ -22,7 +22,7 @@ describe("Manager", () => {
     });
     test("Can set  attribute with constructor", () => {
         const officeNumber = "101";
-        const e = new Manager("Bill", 66, "brt.jst@gmail.com");
+        const e = new Manager("Bill", 66, "brt.jst@gmail.com",officeNumber);
         expect(e.officeNumber).toBe(officeNumber);
       });
   });
@@ -44,7 +44,7 @@ describe("Manager", () => {
     });
     test("Can get office number via get() method", () => {
         const officeNumber = 101;
-        const e = new Manager("Bill", 66, "brt.jst@gmail.com");
+        const e = new Manager("Bill", 66, "brt.jst@gmail.com", officeNumber);
         expect(e.getOfficeNumber()).toBe(officeNumber);
       });
     test("Can get position via getPosition() method", () => {
