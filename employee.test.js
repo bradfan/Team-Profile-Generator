@@ -38,9 +38,9 @@ describe("Employee", () => {
       const e = new Employee("Nick", 77, email);
       expect(e.getEmail()).toBe(email);
     });
-    test("Can get role via getRole() method", () => {
+    test("Can get role via getPosition() method", () => {
       const e = new Employee("Nick", 77, "tbeauchamp@gmail.com");
-      expect(e.getRole()).toBe("Employee");
+      expect(e.getPosition()).toBe("Employee");
     });
   });
 });

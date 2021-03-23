@@ -145,10 +145,7 @@ function createHTML() {
   // create an HTML file from the teamArray
   let teamHTML = "";
   
-   
- 
-
-  for (var i = 0; i < teamArray.length; i++) {
+   for (var i = 0; i < teamArray.length; i++) {
     teamHTML += `
     <div class="card">
                 <div class="card-content">
@@ -230,8 +227,8 @@ function createHTML() {
     `;
 
     // write to the team html file
-     fs.writeFile("index.html", teamArray(answers),(err)=>{
-        if (err) throw err;
-        console.log("sent to html")
-      });
+    //  fs.writeFile("index.html", teamArray(answers),(err)=>{
+    //     if (err) throw err;
+    //     console.log("sent to html")
+    //   });
 }
