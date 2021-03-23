@@ -1,9 +1,9 @@
 console.log("index.js says hello");
 const inquirer = require("inquirer");
 const fs = require("fs");
-const Intern = require("./intern.js");
+const Intern = require("./lib/intern.js");
 const Manager = require("./lib/manager.js");
-const Engineer = require("./engineer.js");
+const Engineer = require("./lib/engineer.js");
 const teamArray = [];
 
 determineEmployee()
@@ -142,46 +142,68 @@ function internInfo() {
 }
 
 function createHTML() {
-
   let teamHTML = ""
-
   for(let subClass of teamArray){
     console.log("position: ", subClass.getPosition())
     console.log(subClass)
-    //if subclass postion === manager
-    // create manager card, push into teamHTML
-
-    //if subclass postion === intern
-    //create intern card
-
-    //if subclass postion == engineer
+    if (getPosition() === Manager){
+       // create manager card, push into teamHTML
+      teamHTML += ` 
+      <div class="card">
+      <div class="card-content">
+      <div class="media">
+      <div class="media-content">
+          <p id="role" class="title is-4">Role: Manager</p>
+          <p id="name" class="title is-4">Name: ${teamArray[i].name}</p>
+          <p id="id" class="title is-4">ID: ${teamArray[i].id}</p>
+          <p id="email" class="title is-4">email:<a href="mailto:${teamArray[i].email}"</p>
+          <p id="modifier" class="title is-4">Office Number: ${teamArray[i].officeNumber}</p>
+      </div>
+  </div>
+  </div>
+  </div>
+  `;
+    }
+    if(getPosition() === Engineer){
+      //if subclass postion == engineer
     //creat engineer card
+      teamHTML += ` 
+      <div class="card">
+      <div class="card-content">
+      <div class="media">
+      <div class="media-content">
+          <p id="role" class="title is-4">Role: Engineer</p>
+          <p id="name" class="title is-4">Name: ${teamArray[i].name}</p>
+          <p id="id" class="title is-4">ID: ${teamArray[i].id}</p>
+          <p id="email" class="title is-4">email:<a href="mailto:${teamArray[i].email}"</p>
+          <p id="modifier" class="title is-4">Github profile: ${teamArray[i].gitHubUserName}</p>
+      </div>
+  </div>
+  </div>
+  </div>
+  `;
+    }
+    if(getPosition() === Intern){
+      //if subclass postion === intern
+    //create intern card
+      teamHTML =+ ` 
+      <div class="card">
+      <div class="card-content">
+      <div class="media">
+      <div class="media-content">
+          <p id="role" class="title is-4">Role: Intern</p>
+          <p id="name" class="title is-4">Name: ${teamArray[i].name}</p>
+          <p id="id" class="title is-4">ID: ${teamArray[i].id}</p>
+          <p id="email" class="title is-4">email:<a href="mailto:${teamArray[i].email}"</p>
+          <p id="modifier" class="title is-4">School: ${teamArray[i].school}</p>
+      </div>
+  </div>
+  </div>
+  </div>
+  `;
+    } 
   }
-
-  // create an HTML file from the teamArray
- 
-  
-   for (var i = 0; i < teamArray.length; i++) {
-    teamHTML += `
-    <div class="card">
-                <div class="card-content">
-                
-                <div class="media">
-                <div class="media-content">
-                    <p id="role" class="title is-4">Role:  ${teamArray}</p>
-                    <p id="name" class="title is-4">Name: ${teamArray[i].name}</p>
-                    <p id="id" class="title is-4">ID: ${teamArray[i].id}</p>
-                    <p id="email" class="title is-4">email:<a href="mailto:${teamArray[i].email}"</p>
-                    <p id="modifier" class="title is-4">Modifier: ${teamArray[i].email}</p>
-                </div>
-            </div>
-            
-                </div>
-            </div>
-            
-        `;
-  }
-
+// create an HTML file from the teamArray
   const indexHTML = `
     <!DOCTYPE html>
         <html lang="en-us">
