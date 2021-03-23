@@ -23,7 +23,7 @@ describe("Manager", () => {
     test("Can set  attribute with constructor", () => {
         const officeNumber = "101";
         const e = new Manager("Bill", 66, "brt.jst@gmail.com");
-        expect(e.officeNumber).toBe("brt.jst@gmail.com");
+        expect(e.officeNumber).toBe(officeNumber);
       });
   });
   describe("getters", () => {
