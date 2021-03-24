@@ -137,74 +137,14 @@ function internInfo() {
           answer.school
         );
         teamArray.push(intern);
+        
         determineEmployee();
       });
 }
 
 function createHTML() {
-  let teamHTML = ""
-  for(let subClass of teamArray){
-    console.log("position: ", subClass.getPosition())
-    console.log(subClass)
-    if (getPosition() === Manager){
-       // create manager card, push into teamHTML
-      teamHTML += ` 
-      <div class="card">
-      <div class="card-content">
-      <div class="media">
-      <div class="media-content">
-          <p id="role" class="title is-4">Role: Manager</p>
-          <p id="name" class="title is-4">Name: ${teamArray[i].name}</p>
-          <p id="id" class="title is-4">ID: ${teamArray[i].id}</p>
-          <p id="email" class="title is-4">email:<a href="mailto:${teamArray[i].email}"</p>
-          <p id="modifier" class="title is-4">Office Number: ${teamArray[i].officeNumber}</p>
-      </div>
-  </div>
-  </div>
-  </div>
-  `;
-    }
-    if(getPosition() === Engineer){
-      //if subclass postion == engineer
-    //creat engineer card
-      teamHTML += ` 
-      <div class="card">
-      <div class="card-content">
-      <div class="media">
-      <div class="media-content">
-          <p id="role" class="title is-4">Role: Engineer</p>
-          <p id="name" class="title is-4">Name: ${teamArray[i].name}</p>
-          <p id="id" class="title is-4">ID: ${teamArray[i].id}</p>
-          <p id="email" class="title is-4">email:<a href="mailto:${teamArray[i].email}"</p>
-          <p id="modifier" class="title is-4">Github profile: ${teamArray[i].gitHubUserName}</p>
-      </div>
-  </div>
-  </div>
-  </div>
-  `;
-    }
-    if(getPosition() === Intern){
-      //if subclass postion === intern
-    //create intern card
-      teamHTML =+ ` 
-      <div class="card">
-      <div class="card-content">
-      <div class="media">
-      <div class="media-content">
-          <p id="role" class="title is-4">Role: Intern</p>
-          <p id="name" class="title is-4">Name: ${teamArray[i].name}</p>
-          <p id="id" class="title is-4">ID: ${teamArray[i].id}</p>
-          <p id="email" class="title is-4">email:<a href="mailto:${teamArray[i].email}"</p>
-          <p id="modifier" class="title is-4">School: ${teamArray[i].school}</p>
-      </div>
-  </div>
-  </div>
-  </div>
-  `;
-    } 
-  }
-// create an HTML file from the teamArray
-  const indexHTML = `
+    let teamHTML = ""
+    const header = `
     <!DOCTYPE html>
         <html lang="en-us">
         <head>
@@ -250,25 +190,104 @@ function createHTML() {
                         My Team
                     </h1>
                 </div>
-            </section>
+            </section>`;
+            teamHTML+=header;
+  for(let subClass of teamArray){
+    console.log("position: ", subClass.getPosition())
+    console.log(subClass)
+    if (subClass.getPosition() === "Manager"){
+       // create manager card, push into teamHTML
+      teamHTML += ` 
+      <div class="card">
+      <div class="card-content">
+      <div class="media">
+      <div class="media-content">
+          <p id="role" class="title is-4">Role: Manager</p>
+          <p id="name" class="title is-4">Name: ${subClass.name}</p>
+          <p id="id" class="title is-4">ID: ${subClass.id}</p>
+          <p id="email" class="title is-4">email:<a href="mailto:${subClass.email}">${subClass.email}</a></p>
+          <p id="modifier" class="title is-4">Office Number: ${subClass.officeNumber}</p>
+      </div>
+  </div>
+  </div>
+  </div>
+  `;
+    }
+    if(subClass.getPosition() === "Engineer"){
+      //if subclass postion == engineer
+    //create engineer card
+      teamHTML += ` 
+      <div class="card">
+      <div class="card-content">
+      <div class="media">
+      <div class="media-content">
+          <p id="role" class="title is-4">Role: Engineer</p>
+          <p id="name" class="title is-4">Name: ${subClass.name}</p>
+          <p id="id" class="title is-4">ID: ${subClass.id}</p>
+          <p id="email" class="title is-4">email:<a href="mailto:${subClass.email}">${subClass.email}</a></p>
+          <p id="modifier" class="title is-4">Github profile:<a href= "https://github.com/${subClass.gitHubUsername}">${subClass.gitHubUserName}</a></p>
+      </div>
+  </div>
+  </div>
+  </div>
+  `;
+    }
+    if(subClass.getPosition() === "Intern"){
+      //if subclass postion === intern
+    //create intern card
+     teamHTML += ` 
+      <div class="card">
+      <div class="card-content">
+      <div class="media">
+      <div class="media-content">
+          <p id="role" class="title is-4">Role: Intern</p>
+          <p id="name" class="title is-4">Name: ${subClass.name}</p>
+          <p id="id" class="title is-4">ID: ${subClass.id}</p>
+          <p id="email" class="title is-4"><a href="mailto:${subClass.email}">${subclass.email}</a></p>
+          <p id="modifier" class="title is-4">School: ${subClass.school}</p>
+      </div>
+  </div>
+  </div>
+  </div>
+  `;
+    } 
+  }
+  
+// create an HTML file from the teamArray
+// 
+  
             
-            
-            ${teamHTML}
-            
-            
-
-
-
+         
+         const footer=`   
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
             <script src = "script.js"></script>
         </body>
         </html>
     `;
+    teamHTML+=footer
+    // console.log("wahoo!: ",teamHTML)
 
-    // write to the team html file
-    //  fs.writeFile("index.html", teamHTML,(err)=>{
-    //     if (err) throw err;
-    //     console.log("sent to html")
-    //   });
+    fs.writeFile("index.html", teamHTML,(err)=>{
+      if (err) throw err;
+       console.log("sent to html");
+    }) 
 }
+// createHTML()
+
+// write to the team html file
+ 
+
+  /**  try {
+  const data = fs.writeFileSync('/Users/joe/test.txt', content)
+  //file written successfully
+} catch (err) {
+  console.error(err)
+} */   
+      /**fs.writeFile('/Users/joe/test.txt', content, err => {
+  if (err) {
+    console.error(err)
+    return
+  }
+  //file written successfully
+}) */
