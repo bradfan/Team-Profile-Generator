@@ -164,6 +164,7 @@ function createHTML() {
             }
             .card{
             background-color: lightgreen;
+            width: 20%;
             }
             .media-content{
             border-radius: 10px;
@@ -171,14 +172,14 @@ function createHTML() {
             background-color: lightgrey;
             margin-bottom: 20px; 
             }
-            .media{
+            .burrito{
                 display:flex;
                 flex-direction: row;
                 float: left;
-                width: 20%;
+                width: 100%;
                 padding: 0 10px;
             }
-            .is-2{
+            .is-4{
                 background-color: lightblue;
             }
             
@@ -190,7 +191,8 @@ function createHTML() {
                         My Team
                     </h1>
                 </div>
-            </section>`;
+            </section>
+            <div class="burrito">`;
             teamHTML+=header;
   for(let subClass of teamArray){
     console.log("position: ", subClass.getPosition())
@@ -205,7 +207,7 @@ function createHTML() {
           <p id="role" class="title is-4">Role: Manager</p>
           <p id="name" class="title is-4">Name: ${subClass.name}</p>
           <p id="id" class="title is-4">ID: ${subClass.id}</p>
-          <p id="email" class="title is-4">email:<a href="mailto:${subClass.email}">${subClass.email}</a></p>
+          <p id="email" class="title is-4"><a href="mailto:${subClass.email}">${subClass.email}</a></p>
           <p id="modifier" class="title is-4">Office Number: ${subClass.officeNumber}</p>
       </div>
   </div>
@@ -224,7 +226,7 @@ function createHTML() {
           <p id="role" class="title is-4">Role: Engineer</p>
           <p id="name" class="title is-4">Name: ${subClass.name}</p>
           <p id="id" class="title is-4">ID: ${subClass.id}</p>
-          <p id="email" class="title is-4">email:<a href="mailto:${subClass.email}">${subClass.email}</a></p>
+          <p id="email" class="title is-4"><a href="mailto:${subClass.email}">${subClass.email}</a></p>
           <p id="modifier" class="title is-4">Github profile:<a href= "https://github.com/${subClass.gitHubUsername}">${subClass.gitHubUserName}</a></p>
       </div>
   </div>
@@ -243,7 +245,7 @@ function createHTML() {
           <p id="role" class="title is-4">Role: Intern</p>
           <p id="name" class="title is-4">Name: ${subClass.name}</p>
           <p id="id" class="title is-4">ID: ${subClass.id}</p>
-          <p id="email" class="title is-4"><a href="mailto:${subClass.email}">${subclass.email}</a></p>
+          <p id="email" class="title is-4"><a href="mailto:${subClass.email}">${subClass.email}</a></p>
           <p id="modifier" class="title is-4">School: ${subClass.school}</p>
       </div>
   </div>
@@ -253,12 +255,7 @@ function createHTML() {
     } 
   }
   
-// create an HTML file from the teamArray
-// 
-  
-            
-         
-         const footer=`   
+const footer=` </div>  
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
             <script src = "script.js"></script>
@@ -273,21 +270,6 @@ function createHTML() {
        console.log("sent to html");
     }) 
 }
-// createHTML()
 
-// write to the team html file
- 
 
-  /**  try {
-  const data = fs.writeFileSync('/Users/joe/test.txt', content)
-  //file written successfully
-} catch (err) {
-  console.error(err)
-} */   
-      /**fs.writeFile('/Users/joe/test.txt', content, err => {
-  if (err) {
-    console.error(err)
-    return
-  }
-  //file written successfully
-}) */
+
