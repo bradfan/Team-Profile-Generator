@@ -1,4 +1,4 @@
-const Engineer = require("./engineer");
+const Engineer = require("../lib/engineer");
 describe("Manager", () => {
   describe("Initialization", () => {
     test("Can initialize an engineer object", () => {

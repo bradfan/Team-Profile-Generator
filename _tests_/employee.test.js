@@ -1,5 +1,5 @@
 // framework provided by instructor
-const Employee = require("./employee");
+const Employee = require("../lib/employee");
 describe("Employee", () => {
   describe("Initialization", () => {
     test("Can initialize an employee object", () => {
